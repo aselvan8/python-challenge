@@ -32,29 +32,30 @@ with open(csvpath) as csvfile:
     # print(candidate_votes)
 
     for i in range(len(candidates)):
-        percentage = candidate_votes[i]/totvotes*100
+        percentage = '{0:.3f}'.format(candidate_votes[i]/totvotes*100)
         candidate_votepercent.append(percentage)
 
     winner = max(candidate_votes)
 
     print("Election Results")
-    print("--------------------------")
+    print("-------------------------")
     print(f"Total Votes: {str(totvotes)}")
-    print("--------------------------")
+    print("-------------------------")
     for x in range(len(candidates)):
-        print(f"{candidates[x]}: {str(round(candidate_votepercent[x], 3))}% ({str(candidate_votes[x])})")
-    print("--------------------------")
+        print(f"{candidates[x]}: {str(candidate_votepercent[x])}% ({str(candidate_votes[x])})")
+    print("-------------------------")
     print(f"Winner: {str(candidates[candidate_votes.index(winner)])}")
-    print("--------------------------")
+    print("-------------------------")
 
 txtpath = os.path.join("analysis", "result.txt")
 with open(txtpath, "w") as txtfile:
 
     txtfile.write("Election Results\n")
-    txtfile.write("--------------------------\n")
+    txtfile.write("-------------------------\n")
     txtfile.write(f"Total Votes: {str(totvotes)}\n")
+    txtfile.write("-------------------------\n")
     for x in range(len(candidates)):
-        txtfile.write(f"{candidates[x]}: {str(round(candidate_votepercent[x], 3))}% ({str(candidate_votes[x])})\n")
-    txtfile.write("--------------------------\n")
+        txtfile.write(f"{candidates[x]}: {str(candidate_votepercent[x])}% ({str(candidate_votes[x])})\n")
+    txtfile.write("-------------------------\n")
     txtfile.write(f"Winner: {str(candidates[candidate_votes.index(winner)])}\n")
-    txtfile.write("--------------------------\n")
+    txtfile.write("-------------------------\n")

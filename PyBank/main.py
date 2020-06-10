@@ -49,7 +49,7 @@ with open(filepath) as csvfile:
     minprofit = min(profit_change)
 
     print("Financial Analysis")
-    print("---------------------------\n")
+    print("----------------------------")
     print(f"Total Months: {str(totmonths)}")
     print(f"Total: ${str(nettot)}")
     print(f"Average Change: ${str(round(average_profitchange, 2))}")
@@ -60,7 +60,7 @@ txtpath = os.path.join("analysis", "result.txt")
 with open(txtpath, "w") as txtfile:
 
     txtfile.write("Financial Analysis\n")
-    txtfile.write("---------------------------------------------------\n")
+    txtfile.write("----------------------------\n")
     txtfile.write(f"Total Months: {str(totmonths)}\n")
     txtfile.write(f"Total: ${str(nettot)}\n")
     txtfile.write(f"Average Change: ${str(round(average_profitchange, 2))}\n")
